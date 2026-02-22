@@ -1,4 +1,7 @@
+# README.md (actualizado)
 # ComposeViz 🐳📊
+
+[![Docker Image CI](https://github.com/AlejandroGlezSan/composeviz/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/AlejandroGlezSan/composeviz/actions/workflows/docker-publish.yml)
 
 **ComposeViz** es una herramienta web que convierte tu archivo `docker-compose.yml` en un gráfico interactivo. Visualiza servicios, dependencias, redes y volúmenes de un vistazo. Ideal para revisar configuraciones complejas, aprender Docker Compose o compartir diagramas con tu equipo.
 
@@ -23,16 +26,23 @@
 ## 🚀 Uso
 
 ### Online (recomendado)
- (cuando esté publicado).
+Próximamente en GitHub Pages. Mientras tanto, puedes usarlo localmente.
 
-### Localmente
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/composeviz.git
-   cd composeviz
+### Con Docker (recomendado para probar localmente)
+Asegúrate de tener Docker instalado y ejecuta:
+
+docker run -d -p 8080:80 --name composeviz glezsan/composeviz
+Luego abre http://localhost:8080 en tu navegador.
+
+
+Localmente sin Docker
+Clona el repositorio:
+
+git clone https://github.com/AlejandroGlezSan/composeviz.git
+cd composeviz
 Abre index.html en tu navegador (no necesita servidor).
 
-## Instrucciones
+Instrucciones de uso
 Pega el contenido de tu docker-compose.yml en el área de texto, o haz clic en "Subir archivo" para seleccionar un archivo.
 
 Haz clic en "Visualizar".
@@ -44,6 +54,7 @@ Usa el botón "Exportar PNG" para guardar la imagen.
 Comparte la URL actual: el gráfico está codificado en la dirección (ej. https://.../#yaml=...).
 
 ## 📖 Ejemplo
+
 Entrada (docker-compose.yml):
 
 yaml
@@ -71,7 +82,8 @@ volumes:
 Salida visual:
 https://assets/example-graph.png (pendiente)
 
-🛠️ Tecnologías
+## 🛠️ Tecnologías
+
 HTML5 / CSS3
 
 JavaScript (ES6)
@@ -85,16 +97,23 @@ FileSaver.js para guardar la imagen
 📁 Estructura del proyecto
 text
 composeviz/
-├── index.html          # Página principal
+├── .github/
+│   └── workflows/
+│       └── docker-publish.yml   # GitHub Actions CI/CD
 ├── css/
-│   └── style.css       # Estilos personalizados
+│   └── style.css
 ├── js/
-│   └── main.js         # Lógica de la aplicación (parseo, grafo, eventos)
-├── assets/             # Imágenes, iconos, etc.
-│   └── demo.png        # Captura de pantalla para el README
-└── README.md           # Este archivo
+│   └── main.js
+├── assets/
+│   └── demo.png                  (pendiente)
+├── .dockerignore
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── index.html
+└── README.md
 
-## 🤝 Contribuir
+##🤝 Contribuir
 
 ¿Se te ocurre una mejora? ¿Quieres añadir más ejemplos o personalizar los estilos del grafo? ¡Las contribuciones son bienvenidas!
 
@@ -107,4 +126,5 @@ Haz commit de tus cambios.
 Sube la rama y abre un Pull Request.
 
 ## 📄 Licencia
+
 MIT © AlejandroGlezSan
