@@ -26,7 +26,7 @@
 ## 🚀 Uso
 
 ### Online (recomendado)
-Próximamente en GitHub Pages. Mientras tanto, puedes usarlo localmente.
+https://alejandroglezsan.github.io/composeviz/
 
 ### Con Docker (recomendado para probar localmente)
 Asegúrate de tener Docker instalado y ejecuta:
