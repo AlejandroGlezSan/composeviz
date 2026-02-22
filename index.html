@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComposeViz · Visualizador de Docker Compose</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Cytoscape.js -->
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <!-- js-yaml -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <!-- FileSaver.js (para exportar PNG) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🐳 ComposeViz</h1>
+        <p>Visualiza tu <code>docker-compose.yml</code> como un grafo interactivo</p>
+    </header>
+
+    <main>
+        <div class="input-panel">
+            <h2>Pega tu docker-compose.yml</h2>
+            <textarea id="yamlInput" placeholder="version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - '80:80'
+    depends_on:
+      - app
+  app:
+    image: myapp
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:"></textarea>
+            <div class="button-group">
+                <button id="visualizeBtn">🔍 Visualizar</button>
+                <button id="exportPngBtn" disabled>📸 Exportar PNG</button>
+                <button id="shareBtn" disabled>🔗 Compartir URL</button>
+                <button id="exampleBtn">📋 Cargar ejemplo</button>
+                <input type="file" id="fileInput" accept=".yml,.yaml" style="display: none;">
+                <button id="uploadBtn">📂 Subir archivo</button>
+            </div>
+            <p class="hint">Los datos permanecen en tu navegador. No se envían a ningún servidor.</p>
+        </div>
+
+        <div class="graph-panel">
+            <div id="cy"></div>
+            <div id="nodeDetails" class="details-panel">
+                <h3>Detalles del nodo</h3>
+                <pre id="detailsContent">Haz clic en un elemento</pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Hecho con 🧠 por <a href="https://github.com/AlejandroGlezSan" target="_blank">AlejandroGlezSan</a> · Código abierto · MIT</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

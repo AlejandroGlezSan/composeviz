@@ -1,0 +1,40 @@
+# Dependencias de Node (si alguna vez se usan)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Python (por si hay scripts auxiliares)
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Docker (no excluir Dockerfile ni docker-compose.yml, pero sí posibles volúmenes locales)
+data/
+*.log
+
+# Archivos temporales
+temp/
+*.tmp
+
+# Credenciales (nunca subir)
+.env
+.secrets
+
+# Imágenes de ejemplo (placeholders, no queremos subir archivos grandes o generados)
+assets/demo.png
+assets/example-graph.png
+
+# Ignorar el directorio de GitHub Pages si se genera localmente (opcional)
+docs/

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  composeviz:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html   # para desarrollo con recarga automática
+    container_name: composeviz
