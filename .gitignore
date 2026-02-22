@@ -32,9 +32,5 @@ temp/
 .env
 .secrets
 
-# Imágenes de ejemplo (placeholders, no queremos subir archivos grandes o generados)
-assets/demo.png
-assets/example-graph.png
-
 # Ignorar el directorio de GitHub Pages si se genera localmente (opcional)
 docs/
